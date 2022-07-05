@@ -27,8 +27,12 @@ export class ConverterComponent implements OnInit {
       var position = 0;
       doc.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
       doc.save('newPDF.pdf');
-    }).finally ( () => {
-      console.log ("O fim da promessa sendo erro ou não")
+    }).catch ( () => {
+      console.log ("Deu erro")
+      //implementação caso der erro
+    }).finally( () =>{
+      console.log ("Fim da promessa")
+      //implementação do fim da promessa sendo erro ou não
     });
   }
 }
