@@ -19,7 +19,6 @@ export class ConverterComponent implements OnInit {
   generatePDF() {
     console.log(this.contentToConvert)
     html2canvas(this.contentToConvert).then(canvas => {
-      console.log(canvas)
       var imgWidth = 208;
       var imgHeight = canvas.height * imgWidth / canvas.width;
       const contentDataURL = canvas.toDataURL('image/png')
